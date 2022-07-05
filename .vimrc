@@ -20,17 +20,14 @@ let g:netrw_browse_split=4
 autocmd VimEnter *
 	\ Vexplore |
 	\ vertical resize -50 
-nnoremap <C-up> :resize +2<cr>
-nnoremap <C-down> :resize -2<cr>
-nnoremap <C-right> :vertical resize +2<cr>
-nnoremap <C-left> :vertical resize -2<cr>
+nnoremap <S-up> :resize +2<cr>
+nnoremap <S-down> :resize -2<cr>
+nnoremap <S-right> :vertical resize +2<cr>
+nnoremap <S-left> :vertical resize -2<cr>
 nnoremap e <C-w>
 
-" le mapping 
-imap { {<Enter><Enter>}<Up><Tab>
-imap jk <Esc>
-imap [ []<Left>
-imap ( ()<Left>
+" Mapping de base sur Vim
+imap jk <Esc>.
 map ; <S-a>
 map . :w<Enter>
 map q <S-z><S-z>
@@ -44,9 +41,7 @@ xmap [ di[jkp
 xmap < di<><Left>jkp
 xmap ' di''<Left>jkp
 xmap * di/**/<Left><left>jkp
-xmap jk <Esc>
 
-" les abréviations
-abbreviate intmain #include <stdio.h><Enter>#include <stdlib.h><Enter><Enter>int	main(int argc, char **argv<right><Enter>{(void<right>argc;<Enter>(void<right>argv;
-abbreviate in #include
-ab inc #include <stdio.h><Enter>#include <stdlib.h><Enter>
+" Fichier Type selon l'extension du fichier editer
+autocmd FileType c source ~/.vim/c.vim
+autocmd FileType html source ~/.vim/html.vim
